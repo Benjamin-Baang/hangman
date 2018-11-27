@@ -1,0 +1,304 @@
+<html>
+
+<head>
+
+<style>
+	#box3{
+		position: absolute;
+		left: 200px;
+		top: 50px;
+	}
+
+	#box4{
+		position: absolute;
+		left: 237px;
+		top: 125px;
+	}
+
+	#box5{
+		position: absolute;
+		left: 170px;
+		top: 150px;
+	}
+	
+	#box6{
+		position: absolute;
+		left: 243px;
+		top: 150px;
+	}
+
+	#box7{
+		position: absolute;
+		left: 175px;
+		top: 252px;
+	}
+
+	#box8{
+		position: absolute;
+		left: 243px;
+		top: 252px;
+	}
+
+	#box9{
+		position: absolute;
+		left: 235px;
+		top: 0px;
+	}
+		
+	#box10{
+		position: absolute;
+		left: 250px;
+		top: 450px;
+	}
+
+    #letter1{
+		position: absolute;
+		left: 500px;
+		top: 400px;
+	}
+    
+    #letter2{
+		position: absolute;
+		left: 565px;
+		top: 400px;
+	}
+    
+    #letter3{
+		position: absolute;
+		left: 630px;
+		top: 400px;
+	}
+    
+    #letter4{
+		position: absolute;
+		left: 695px;
+		top: 400px;
+	}
+    
+    #letter5{
+		position: absolute;
+		left: 760px;
+		top: 400px;
+	}
+    
+    #letter6{
+		position: absolute;
+		left: 825px;
+		top: 400px;
+	}
+    
+    #alphabet{
+        position: absolute;
+        left: 350px;
+        top: 450px;
+    }	
+
+    button{
+        width:50px;
+    }
+
+    img{
+        margin-top:12px;
+    }
+
+	.hidden{
+		display:none;
+	}	
+</style>
+		
+<script>
+    var count = 0;
+    var correct = 0;
+
+	function giveUp(){
+		document.getElementById("box3").classList.remove('hidden');
+		document.getElementById("box4").classList.remove('hidden');
+		document.getElementById("box5").classList.remove('hidden');
+		document.getElementById("box6").classList.remove('hidden');
+		document.getElementById("box7").classList.remove('hidden');
+		document.getElementById("box8").classList.remove('hidden');
+		document.getElementById("letter1").innerHTML = "M";
+		document.getElementById("letter2").innerHTML = "E";
+		document.getElementById("letter3").innerHTML = "R";
+		document.getElementById("letter4").innerHTML = "C";
+		document.getElementById("letter5").innerHTML = "E";
+		document.getElementById("letter6").innerHTML = "D";
+	}
+
+	function newGame() {
+	    alert("Please refresh the page.");
+	}
+
+	function clickC() {
+	    document.getElementById("letter4").innerHTML = "C";
+	    correct = correct + 1;
+	    if (correct == 6) {
+	        alert("You Won!!");
+	    }
+	}
+
+	function clickD() {
+	    document.getElementById("letter6").innerHTML = "D";
+	    correct = correct + 1;
+	    if (correct == 6) {
+	        alert("You Won!!");
+	    }
+	}
+
+	function clickE() {
+	    document.getElementById("letter2").innerHTML = "E";
+	    document.getElementById("letter5").innerHTML = "E";
+	    correct = correct + 2;
+	    if (correct == 6) {
+	        alert("You Won!!");
+	    }
+	}
+
+	function clickM() {
+	    document.getElementById("letter1").innerHTML = "M";
+	    correct = correct + 1;
+	    if (correct == 6) {
+	        alert("You Won!!");
+	    }
+	}
+
+	function clickR() {
+	    document.getElementById("letter3").innerHTML = "R";
+	    correct = correct + 1;
+	    if (correct == 6) {
+	        alert("You Won!!");
+	    }
+	}
+
+	function error() {
+	    if (count == 0) {
+	        document.getElementById("box3").classList.remove('hidden');
+	    }
+	    else if (count == 1) {
+	        document.getElementById("box4").classList.remove('hidden');
+	    }
+	    else if (count == 2) {
+	        document.getElementById("box5").classList.remove('hidden');
+	    }
+	    else if (count == 3) {
+	        document.getElementById("box6").classList.remove('hidden');
+	    }
+	    else if (count == 4) {
+	        document.getElementById("box7").classList.remove('hidden');
+	    }
+	    else if (count == 5) {
+	        document.getElementById("box8").classList.remove('hidden');
+	    }
+	    count = count + 1;
+	    else {
+	        document.getElementById("letter1").innerHTML = "M";
+	        document.getElementById("letter2").innerHTML = "E";
+	        document.getElementById("letter3").innerHTML = "R";
+	        document.getElementById("letter4").innerHTML = "C";
+	        document.getElementById("letter5").innerHTML = "E";
+	        document.getElementById("letter6").innerHTML = "D";
+	        alert("You Lost!!");
+	    }
+	}
+</script>
+
+</head>
+
+<body>
+	<div id="box9">
+		<img src="gallows.png" width="200" height="325">
+	</div>
+
+    <div id="box2">
+        <label id="counter"></label>
+    </div>
+
+	<div id="box3" class="hidden">
+		<img src="head.png" width="80">
+	</div>
+	
+	<div id="box4" class="hidden">
+		<img src="body.png" length="80px">
+	</div>
+
+	<div id="box5" class="hidden">
+		<img src="arm1.png" width="65px">
+	</div>
+
+	<div id="box6" class="hidden">
+		<img src="arm2.png" width="65px">
+	</div>
+
+	<div id="box7" class="hidden">
+		<img src="arm1.png" width="60px" height="65px">
+	</div>
+
+	<div id="box8" class="hidden">
+		<img src="arm2.png" width="60px" height="65px">
+	</div>
+
+	<div id="box10">
+        <p> <button onclick="newGame()"> New Game </button> </p>
+        <p> <button onclick="giveUp()"> Give Up </button> </p>
+	</div>
+
+    <div id="letter1">
+        <img src="line.png">
+    </div>
+
+    <div id="letter2">
+        <img src="line.png">
+    </div>
+
+    <div id="letter3">
+        <img src="line.png">
+    </div>
+
+    <div id="letter4">
+        <img src="line.png">
+    </div>
+
+    <div id="letter5">
+        <img src="line.png">
+    </div>
+
+    <div id="letter6">
+        <img src="line.png">
+    </div>
+    
+    <div id="alphabet">
+        <p>
+            <button onclick="error()">A</button>
+            <button onclick="error()">B</button>
+            <button onclick="clickC()">C</button>
+            <button onclick="clickD()">D</button>
+            <button onclick="clickE()">E</button>
+            <button onclick="error()">F</button>
+            <button onclick="error()">G</button>
+            <button onclick="error()">H</button>
+            <button onclick="error()">I</button>
+            <button onclick="error()">J</button>
+            <button onclick="error()">K</button>
+            <button onclick="error()">L</button>
+            <button onclick="clickM()">M</button>
+        </p>
+        <p>
+            <button onclick="error()">N</button>
+            <button onclick="error()">O</button>
+            <button onclick="error()">P</button>
+            <button onclick="error()">Q</button>
+            <button onclick="clickR()">R</button>
+            <button onclick="error()">S</button>
+            <button onclick="error()">T</button>
+            <button onclick="error()">U</button>
+            <button onclick="error()">V</button>
+            <button onclick="error()">W</button>
+            <button onclick="error()">X</button>
+            <button onclick="error()">Y</button>
+            <button onclick="error()">Z</button>
+        </p>
+    </div>
+
+</body>
+
+</html>
